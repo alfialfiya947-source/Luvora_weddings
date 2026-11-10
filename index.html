@@ -176,6 +176,57 @@ if(!w){alert('Allow pop-ups to print your invitation.');return;}
 w.document.write('<html><head><title>Wedding Invitation</title><style>body{text-align:center;font-family:Georgia;background:#fffaf5;padding:25px}.preview{border:5px double #d5b68c;padding:30px;max-width:650px;margin:auto}.preview img{max-width:100%;max-height:250px}.names{font-size:30px;color:#b17d8d}p{line-height:1.8}</style></head><body>'+document.getElementById('preview').outerHTML+'</body></html>');
 w.document.close();w.print();
 }
+const cover = document.createElement('div');
+cover.id = 'luvora-envelope';
+cover.innerHTML = `
+<style>
+#luvora-envelope {
+position:fixed;inset:0;background:#fff8f5;
+z-index:99999;display:flex;align-items:center;
+justify-content:center;flex-direction:column;
+font-family:Georgia,serif;
+}
+#luvora-envelope .env {
+width:280px;height:175px;background:#e9bfc9;
+position:relative;display:flex;align-items:center;
+justify-content:center;border-radius:5px;
+box-shadow:0 8px 25px #b88c9560;
+}
+#luvora-envelope .flap {
+position:absolute;top:0;left:0;width:0;height:0;
+border-left:140px solid transparent;
+border-right:140px solid transparent;
+border-top:95px solid #d99eaf;
+transform-origin:top;transition:transform .8s;
+}
+#luvora-envelope.open .flap {
+transform:rotateX(180deg);
+}
+#luvora-envelope .letter {
+background:#fffaf5;padding:18px 28px;
+text-align:center;color:#9b6878;
+}
+#luvora-envelope h2 {font-size:23px;margin:5px;}
+#luvora-envelope button {
+margin-top:28px;padding:12px 28px;
+border:0;border-radius:25px;background:#b77b8c;
+color:white;font-size:15px;
+}
+</style>
+<div class="env">
+<div class="letter">
+<h2>Luvora Weddings</h2>
+<p>A Beautiful Beginning</p>
+</div>
+<div class="flap"></div>
+</div>
+<button id="open-luvora">Open Invitation ♡</button>
+`;
+document.body.appendChild(cover);
+document.getElementById('open-luvora').onclick = function(){
+cover.classList.add('open');
+setTimeout(()=>cover.remove(),900);
+};
 </script>
 </body>
 </html>
