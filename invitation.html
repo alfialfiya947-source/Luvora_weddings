@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luvora Weddings</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff8f5;color:#604c4b;font-family:Georgia,serif;text-align:center}
+section{padding:45px 20px;min-height:250px}
+h1,h2{color:#a66e7d;font-weight:normal}
+p{line-height:1.8}
+button{background:#a66e7d;color:white;border:0;padding:12px 22px;border-radius:25px;margin:8px;cursor:pointer}
+input,textarea,select{width:100%;padding:12px;margin:7px 0;border:1px solid #e6cbd0;border-radius:8px;background:white;font:14px Arial}
+img{max-width:100%;border-radius:12px}
+.card{max-width:500px;margin:20px auto;padding:25px;background:#fff;border-radius:18px;box-shadow:0 5px 25px #d7b9b955}
+#cover{position:fixed;inset:0;background:#17483d;z-index:10;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#f5dfb4}
+#cover h1{color:#f5dfb4}
+#cover button{background:#d6b779;color:#17483d}
+#invitation{display:none}
+.hero{background:#f9e9e8;padding:55px 20px}
+.photo{width:150px;height:180px;object-fit:cover;border-radius:100px;border:4px solid #edcbd0}
+.profile{display:inline-block;margin:12px;width:42%;max-width:180px}
+.quote{font-style:italic;color:#a66e7d;font-size:19px}
+footer{padding:30px;background:#f3e2df}
+</style>
+</head>
+<body>
+
+<div id="cover">
+<p>✦ ✦ ✦</p>
+<h1>Luvora Weddings</h1>
+<p>A Beautiful Beginning</p>
+<button onclick="openInvite()">Open Invitation ♡</button>
+</div>
+
+<div id="invitation">
+
+<div class="hero">
+<p>TOGETHER WITH THEIR FAMILIES</p>
+<h1 id="names">Bride & Groom</h1>
+<p id="dateTop">Wedding Day</p>
+<img id="couplePhoto" class="photo" src="" style="display:none">
+<h2>Save The Date</h2>
+</div>
+
+<section>
+<h2>Counting Down To Forever</h2>
+<h1 id="countdown">Coming Soon</h1>
+<p id="countDate"></p>
+</section>
+
+<section style="background:#fff">
+<h2>Meet The Couple</h2>
+<div class="profile">
+<img id="bridePhoto" class="photo" src="" style="display:none">
+<h2 id="brideName">Bride</h2>
+<p id="brideInfo">The beautiful bride</p>
+</div>
+<div class="profile">
+<img id="groomPhoto" class="photo" src="" style="display:none">
+<h2 id="groomName">Groom</h2>
+<p id="groomInfo">The handsome groom</p>
+</div>
+</section>
+
+<section>
+<h2>With The Blessings Of</h2>
+<p id="parents">Our beloved parents and families</p>
+</section>
+
+<section style="background:#f9e9e8">
+<h2>Wedding Celebration</h2>
+<h1 id="eventDate">Wedding Date</h1>
+<p id="eventTime">Muhurtham & Time</p>
+<h2 id="venue">Wedding Venue</h2>
+<p id="address">Venue Address</p>
+<a id="mapLink" href="#" target="_blank">View Location</a>
+</section>
+
+<section>
+<p class="quote" id="quote">
+"Two hearts, one beautiful journey, forever together."
+</p>
+<h2>With Love, We Invite You</h2>
+<p id="inviteMessage">Please join us to celebrate our special day.</p>
+</section>
+
+<section style="background:#fff">
+<h2>RSVP</h2>
+<p>We would love to know if you can join us!</p>
+<input id="guest" placeholder="Your name">
+<button onclick="rsvp()">Confirm Attendance</button>
+</section>
+
+<footer>
+<h2>Luvora Weddings</h2>
+<p>Making Your Moments Unforgettable ♡</p>
+</footer>
+</div>
+
+<div class="card" id="builder">
+<h2>Create Your Invitation</h2>
+<p>Choose your template</p>
+<select id="theme" onchange="changeTheme()">
+<option value="pink">Pink Floral</option>
+<option value="gold">Ivory Gold</option>
+<option value="green">Sage Green</option>
+</select>
+
+<input id="bride" placeholder="Bride's Name">
+<input id="groom" placeholder="Groom's Name">
+<label>Bride's Photo</label>
+<input type="file" accept="image/*" id="brideUpload">
+<label>Groom's Photo</label>
+<input type="file" accept="image/*" id="groomUpload">
+<label>Couple Photo</label>
+<input type="file" accept="image/*" id="coupleUpload">
+
+<input id="brideDetails" placeholder="About the bride">
+<input id="groomDetails" placeholder="About the groom">
+<input id="brideParents" placeholder="Bride's parents">
+<input id="groomParents" placeholder="Groom's parents">
+
+<label>Wedding Date</label>
+<input type="date" id="wdate">
+<input type="time" id="wtime" placeholder="Muhurtham time">
+<input id="wvenue" placeholder="Venue name">
+<input id="waddress" placeholder="Venue address">
+<input id="wmap" placeholder="Google Maps link">
+<textarea id="wquote" placeholder="Invitation quote"></textarea>
+<textarea id="wmessage" placeholder="Invitation message"></textarea>
+
+<label>Background Music</label>
+<input type="file" id="musicUpload" accept="audio/*">
+
+<button onclick="makePreview()">Preview Invitation ♡</button>
+<button onclick="shareInvite()">Share Invitation</button>
+<p id="status"></p>
+</div>
+
+<audio id="music" controls style="display:none;width:90%;margin:15px auto"></audio>
+
+<script>
+function openInvite(){
+document.getElementById('cover').style.display='none';
+document.getElementById('invitation').style.display='block';
+document.getElementById('builder').style.display='none';
+}
+
+function changeTheme(){
+let t=document.getElementById('theme').value;
+let colors={
+pink:['#fff8f5','#a66e7d','#f9e9e8'],
+gold:['#fffaf0','#a48645','#f3ead5'],
+green:['#f5f8f1','#657c68','#e4ebdf']
+};
+document.body.style.background=colors[t][0];
+document.body.style.color='#604c4b';
+document.querySelectorAll('h1,h2').forEach(x=>x.style.color=colors[t][1]);
+document.querySelectorAll('.hero,section')[0].style.background=colors[t][2];
+}
+
+function photoUpload(inputId,imgId){
+let f=document.getElementById(inputId).files[0];
+if(f){
+let url=URL.createObjectURL(f);
+let img=document.getElementById(imgId);
+img.src=url;img.style.display='inline-block';
+}
+}
+
+function makePreview(){
+let b=document.getElementById('bride').value||'Bride';
+let g=document.getElementById('groom').value||'Groom';
+document.getElementById('names').innerText=b+' & '+g;
+document.getElementById('brideName').innerText=b;
+document.getElementById('groomName').innerText=g;
+document.getElementById('brideInfo').innerText=document.getElementById('brideDetails').value;
+document.getElementById('groomInfo').innerText=document.getElementById('groomDetails').value;
+document.getElementById('parents').innerText=
+document.getElementById('brideParents').value+' & '+document.getElementById('groomParents').value;
+let d=document.getElementById('wdate').value;
+document.getElementById('dateTop').innerText=d;
+document.getElementById('eventDate').innerText=d;
+document.getElementById('eventTime').innerText=document.getElementById('wtime').value;
+document.getElementById('venue').innerText=document.getElementById('wvenue').value;
+document.getElementById('address').innerText=document.getElementById('waddress').value;
+document.getElementById('mapLink').href=document.getElementById('wmap').value||'#';
+document.getElementById('quote').innerText=document.getElementById('wquote').value;
+document.getElementById('inviteMessage').innerText=document.getElementById('wmessage').value;
+photoUpload('brideUpload','bridePhoto');
+photoUpload('groomUpload','groomPhoto');
+photoUpload('coupleUpload','couplePhoto');
+if(d){
+let target=new Date(d+'T00:00:00').getTime();
+function tick(){
+let diff=target-Date.now();
+if(diff<=0){document.getElementById('countdown').innerText='The Big Day is Here!';return}
+let days=Math.floor(diff/86400000);
+let hours=Math.floor(diff%86400000/3600000);
+let mins=Math.floor(diff%3600000/60000);
+let secs=Math.floor(diff%60000/1000);
+document.getElementById('countdown').innerText=days+' Days '+hours+' Hours '+mins+' Minutes '+secs+' Seconds';
+}
+tick();
+window.countTimer=setInterval(tick,1000);
+}
+let musicFile=document.getElementById('musicUpload').files[0];
+if(musicFile){
+let player=document.getElementById('music');
+player.src=URL.createObjectURL(musicFile);
+player.style.display='block';
+}
+changeTheme();
+document.getElementById('invitation').style.display='block';
+document.getElementById('builder').style.display='none';
+document.getElementById('status').innerText='';
+window.scrollTo(0,0);
+}
+
+function rsvp(){
+let guest=document.getElementById('guest').value;
+if(!guest){alert('Please enter your name');return}
+alert('Thank you, '+guest+'! Please contact the couple to confirm your RSVP.');
+}
+
+function shareInvite(){
+alert('This is a preview prototype. A permanent shareable invitation link needs online storage and a database. We will add that next.');
+}
+</script>
+</body>
+</html>
