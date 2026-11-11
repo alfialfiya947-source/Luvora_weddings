@@ -4,229 +4,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luvora Weddings | Your Love Story</title>
+<title>Luvora Weddings | Create Your Invitation</title>
 <style>
-:root{--pink:#c58e9d;--cream:#fffaf5;--gold:#b99a68;--dark:#59454b}
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--dark);font-family:Georgia,serif}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;background:#fffaf5;position:sticky;top:0;z-index:5;box-shadow:0 2px 12px #0000000b}
-.logo{font-size:23px;color:var(--pink);font-style:italic}
-nav a{color:var(--dark);text-decoration:none;margin-left:12px;font-size:13px}
-.hero{text-align:center;padding:90px 20px;background:linear-gradient(#fff8f1dd,#fff8f1dd),url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1400') center/cover}
-.hero h1{font-size:clamp(42px,8vw,75px);font-weight:normal;color:#a97585;margin:10px}
-.hero p{font-size:17px;line-height:1.8}
-.btn{display:inline-block;background:var(--pink);color:white;padding:13px 25px;border:0;border-radius:30px;text-decoration:none;cursor:pointer;margin:8px;font-size:14px}
-section{padding:65px 7%;text-align:center}
-h2{font-size:34px;font-weight:normal;color:#ad7888}
-.sub{color:#927d7e;line-height:1.8}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:30px}
-.card{background:white;padding:28px 18px;border-radius:15px;box-shadow:0 5px 25px #9b758515}
-.card h3{color:#b17d8d;font-weight:normal}
-.price{font-size:24px;color:var(--gold)}
-#builder{background:#f8eee9}
-.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;text-align:left;max-width:850px;margin:25px auto}
-label{display:block;font-size:14px;margin-bottom:6px}
-input,textarea{width:100%;padding:12px;border:1px solid #e6d5d4;border-radius:8px;background:white;font:14px Arial;color:#59454b}
-textarea{min-height:75px}
-.field{margin-bottom:12px}
-.preview{max-width:650px;margin:35px auto;padding:35px 20px;background:white;border:5px double #d5b68c;border-radius:5px;box-shadow:0 10px 35px #00000012}
-.preview h2{font-size:36px}
-.preview img{max-width:100%;max-height:240px;object-fit:cover;border-radius:8px}
-.preview .names{font-size:30px;color:#b17d8d;margin:20px 0}
-.preview p{line-height:1.8}
-footer{padding:35px 15px;text-align:center;background:#f1e4df;color:#806b6c}
-.small{font-size:12px;color:#947e7e}
-@media(max-width:550px){nav{padding:14px 4%}nav a{margin-left:6px;font-size:11px}.logo{font-size:19px}.hero{padding:65px 15px}section{padding:48px 5%}}
+body{margin:0;font-family:Georgia,serif;background:#fff9f6;color:#604e4c}
+header{padding:18px 15px;background:#fff;text-align:center;position:sticky;top:0;z-index:5;box-shadow:0 2px 12px #0000000a}
+.logo{font-size:27px;color:#ad7885;letter-spacing:2px}
+nav{margin-top:12px}
+nav a{color:#80656a;text-decoration:none;margin:0 9px;font-size:13px}
+.hero{padding:75px 20px;text-align:center;background:linear-gradient(#fff1ed,#fff9f6)}
+.hero h1{font-size:38px;color:#a66e7d;font-weight:normal}
+.hero p{line-height:1.9}
+.btn{display:inline-block;background:#ae7886;color:white;padding:13px 25px;border-radius:30px;text-decoration:none;margin:10px 5px;border:0}
+section{padding:55px 18px;text-align:center}
+h2{font-weight:normal;color:#a66e7d;font-size:28px}
+.sub{color:#967e7d;line-height:1.8}
+.services,.templates{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:25px}
+.card{background:white;border-radius:18px;padding:22px;width:280px;box-shadow:0 5px 20px #b58d8d18}
+.card h3{color:#a66e7d;font-weight:normal}
+.template{height:230px;border-radius:13px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:15px;margin-bottom:15px}
+.template h3{font-size:24px}
+.pink{background:#f8e4e5;color:#a66e7d}
+.gold{background:#f5edda;color:#a1874e}
+.green{background:#e4ebdf;color:#637c68}
+footer{background:#f4e5e2;padding:35px 15px;text-align:center}
 </style>
 </head>
 <body>
 
-<nav>
+<header>
 <div class="logo">Luvora Weddings</div>
-<div>
+<nav>
 <a href="#home">Home</a>
 <a href="#services">Services</a>
-<a href="#builder">Create</a>
-</div>
+<a href="#templates">Templates</a>
+<a href="#contact">Contact</a>
 </nav>
-
-<header class="hero" id="home">
-<p>✨ YOUR LOVE STORY, BEAUTIFULLY TOLD ✨</p>
-<h1>Luvora Weddings</h1>
-<p>Turning your beautiful moments into unforgettable memories.</p>
-<a class="btn" href="#services">Explore Services</a>
-<a class="btn" href="#builder">Create Invitation</a>
 </header>
 
-<section id="about">
-<h2>Welcome to Luvora</h2>
-<p class="sub">Every love story deserves a beautiful beginning.<br>
-We create personalised AI wedding invitations, animated couple stories and special occasion videos.</p>
-</section>
+<div class="hero" id="home">
+<p>✦ YOUR SPECIAL DAY, BEAUTIFULLY INVITED ✦</p>
+<h1>Every Love Story Deserves<br>A Beautiful Invitation</h1>
+<p>Create a beautiful digital wedding invitation<br>with your photos, music and memories.</p>
+<a class="btn" href="#templates">Explore Templates ♡</a>
+</div>
 
 <section id="services">
 <h2>Our Services</h2>
-<p class="sub">Beautiful creations for your special moments.</p>
+<p class="sub">Make every special moment unforgettable.</p>
 <div class="services">
-<div class="card"><h3>Save the Date</h3><p>AI Animated Save the Date videos</p><div class="price">₹150</div></div>
-<div class="card"><h3>Couple Story</h3><p>AI Animated Couple Story</p><div class="price">₹300</div></div>
-<div class="card"><h3>Wedding Invitation</h3><p>AI Animated Wedding Invitation</p><div class="price">₹200</div></div>
-<div class="card"><h3>Special Moments</h3><p>AI Animated Birthday & Anniversary videos</p><div class="price">₹200</div></div>
+<div class="card">
+<h3>Wedding Invitations</h3>
+<p>Personalized scrolling digital wedding invitations.</p>
+</div>
+<div class="card">
+<h3>Save The Date</h3>
+<p>Beautiful animated Save The Date creations.</p>
+</div>
+<div class="card">
+<h3>Couple Stories</h3>
+<p>Tell your love story through creative animations.</p>
+</div>
+<div class="card">
+<h3>Special Moments</h3>
+<p>Birthday and anniversary animated creations.</p>
+</div>
 </div>
 </section>
 
-<section id="builder">
-<h2>Create Your Wedding Invitation</h2>
-<p class="sub">Add your details below and see your invitation preview.</p>
+<section id="templates" style="background:#fff">
+<h2>Choose Your Wedding Style</h2>
+<p class="sub">Choose a design to start creating your invitation.</p>
 
-<div class="formgrid">
-<div class="field"><label>Bride's Name</label><input id="bride" placeholder="Bride's name"></div>
-<div class="field"><label>Groom's Name</label><input id="groom" placeholder="Groom's name"></div>
-<div class="field"><label>Bride's Parents</label><input id="bp" placeholder="Parents' names"></div>
-<div class="field"><label>Groom's Parents</label><input id="gp" placeholder="Parents' names"></div>
-<div class="field"><label>Wedding Date</label><input id="date" type="date"></div>
-<div class="field"><label>Wedding Time</label><input id="time" type="time"></div>
-<div class="field"><label>Venue</label><input id="venue" placeholder="Wedding venue"></div>
-<div class="field"><label>Location / Map Link</label><input id="location" placeholder="Address or Google Maps link"></div>
-<div class="field"><label>Invitation Message</label><textarea id="message" placeholder="Together with our families, we invite you..."></textarea></div>
-<div class="field"><label>Upload Couple Photo</label><input id="photo" type="file" accept="image/*"></div>
-<div class="field"><label>Upload Background Music</label><input id="music" type="file" accept="audio/*"></div>
-<div class="field"><label>Your WhatsApp Number (optional)</label><input id="phone" placeholder="Country code + number"></div>
+<div class="templates">
+<div class="card">
+<div class="template pink">
+<p>♡ FLORAL COLLECTION ♡</p>
+<h3>Pink Floral</h3>
+<p>A Romantic Beginning</p>
+</div>
+<h3>Pink Floral</h3>
+<p>Soft, romantic and elegant.</p>
+<a class="btn" href="invitation.html?theme=pink">Choose Template</a>
 </div>
 
-<button class="btn" onclick="updatePreview()">Preview Invitation</button>
-
-<div class="preview" id="preview">
-<p style="color:#b99a68;letter-spacing:3px">WEDDING INVITATION</p>
-<h2>Two Hearts, One Beautiful Story</h2>
-<div class="names" id="names">Bride & Groom</div>
-<img id="previewPhoto" style="display:none" alt="Couple photo">
-<p id="parents">Together with our families</p>
-<p id="previewMessage">We joyfully invite you to celebrate our special day.</p>
-<p id="previewDate">Wedding Date</p>
-<h3 id="previewVenue">Wedding Venue</h3>
-<p id="previewLocation"></p>
-<p style="color:#b99a68">Your presence is our greatest gift.</p>
+<div class="card">
+<div class="template gold">
+<p>✦ ROYAL COLLECTION ✦</p>
+<h3>Ivory Gold</h3>
+<p>A Timeless Celebration</p>
+</div>
+<h3>Ivory Gold</h3>
+<p>Classic, royal and graceful.</p>
+<a class="btn" href="invitation.html?theme=gold">Choose Template</a>
 </div>
 
-<div>
-<button class="btn" onclick="downloadInvite()">Download Invitation</button>
-<button class="btn" onclick="printInvite()">Print Invitation</button>
+<div class="card">
+<div class="template green">
+<p>❀ NATURE COLLECTION ❀</p>
+<h3>Sage Green</h3>
+<p>Forever Starts Here</p>
 </div>
-<p class="small">Your invitation preview is created on this device.</p>
+<h3>Sage Green</h3>
+<p>Fresh, calm and minimal.</p>
+<a class="btn" href="invitation.html?theme=green">Choose Template</a>
+</div>
+</div>
 </section>
 
-<section id="contact">
+<section>
+<h2>Your Story. Your Style.</h2>
+<p class="sub">Add your names, photos, wedding details and music<br>to create an invitation that feels uniquely yours.</p>
+<a class="btn" href="invitation.html">Create Your Invitation ♡</a>
+</section>
+
+<section id="contact" style="background:#fff">
 <h2>Let's Create Something Beautiful</h2>
-<p class="sub">Have a special occasion coming up?<br>Contact Luvora Weddings for personalised creations.</p>
-<a class="btn" href="#builder">Create Your Invitation</a>
+<p class="sub">Have a special celebration coming up?</p>
+<p>Contact Luvora Weddings</p>
 </section>
 
 <footer>
-<div class="logo">Luvora Weddings</div>
-<p>Your Love Story, Beautifully Told.</p>
-<p class="small">© 2026 Luvora Weddings. All rights reserved.</p>
+<h2>Luvora Weddings</h2>
+<p>Making Your Moments Unforgettable ♡</p>
+<p>© 2026 Luvora Weddings</p>
 </footer>
 
-<audio id="player" loop></audio>
-
-<script>
-let photoData="";
-function updatePreview(){
-const bride=document.getElementById('bride').value||"Bride";
-const groom=document.getElementById('groom').value||"Groom";
-document.getElementById('names').textContent=bride+" & "+groom;
-document.getElementById('parents').textContent=
-"With the blessings of "+(document.getElementById('bp').value||"our families")+
-" and "+(document.getElementById('gp').value||"our families");
-document.getElementById('previewMessage').textContent=
-document.getElementById('message').value||"We joyfully invite you to celebrate our special day.";
-let d=document.getElementById('date').value;
-let t=document.getElementById('time').value;
-document.getElementById('previewDate').textContent=
-(d?new Date(d+"T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"}):"Wedding Date")+
-(t?" • "+t:"");
-document.getElementById('previewVenue').textContent=document.getElementById('venue').value||"Wedding Venue";
-document.getElementById('previewLocation').textContent=document.getElementById('location').value;
-if(photoData){
-document.getElementById('previewPhoto').src=photoData;
-document.getElementById('previewPhoto').style.display="block";
-}
-}
-document.getElementById('photo').addEventListener('change',function(e){
-let f=e.target.files[0];if(!f)return;
-let r=new FileReader();r.onload=()=>{photoData=r.result;updatePreview()};r.readAsDataURL(f);
-});
-document.getElementById('music').addEventListener('change',function(e){
-let f=e.target.files[0];if(!f)return;
-let player=document.getElementById('player');
-player.src=URL.createObjectURL(f);player.play().catch(()=>{});
-});
-function downloadInvite(){
-updatePreview();
-let content=document.getElementById('preview').outerHTML;
-let html='<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wedding Invitation</title><style>body{background:#fffaf5;color:#59454b;font-family:Georgia;text-align:center;padding:30px 12px}.preview{max-width:650px;margin:auto;padding:30px 15px;background:white;border:5px double #d5b68c}.preview h2{color:#ad7888;font-weight:normal}.names{font-size:30px;color:#b17d8d;margin:20px}.preview img{max-width:100%;max-height:250px}p{line-height:1.8}</style></head><body>'+content+'</body></html>';
-let blob=new Blob([html],{type:'text/html'});
-let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Luvora-Wedding-Invitation.html';a.click();URL.revokeObjectURL(a.href);
-}
-function printInvite(){
-updatePreview();
-let w=window.open('','_blank');
-if(!w){alert('Allow pop-ups to print your invitation.');return;}
-w.document.write('<html><head><title>Wedding Invitation</title><style>body{text-align:center;font-family:Georgia;background:#fffaf5;padding:25px}.preview{border:5px double #d5b68c;padding:30px;max-width:650px;margin:auto}.preview img{max-width:100%;max-height:250px}.names{font-size:30px;color:#b17d8d}p{line-height:1.8}</style></head><body>'+document.getElementById('preview').outerHTML+'</body></html>');
-w.document.close();w.print();
-}
-const cover = document.createElement('div');
-cover.id = 'luvora-envelope';
-cover.innerHTML = `
-<style>
-#luvora-envelope {
-position:fixed;inset:0;background:#fff8f5;
-z-index:99999;display:flex;align-items:center;
-justify-content:center;flex-direction:column;
-font-family:Georgia,serif;
-}
-#luvora-envelope .env {
-width:280px;height:175px;background:#e9bfc9;
-position:relative;display:flex;align-items:center;
-justify-content:center;border-radius:5px;
-box-shadow:0 8px 25px #b88c9560;
-}
-#luvora-envelope .flap {
-position:absolute;top:0;left:0;width:0;height:0;
-border-left:140px solid transparent;
-border-right:140px solid transparent;
-border-top:95px solid #d99eaf;
-transform-origin:top;transition:transform .8s;
-}
-#luvora-envelope.open .flap {
-transform:rotateX(180deg);
-}
-#luvora-envelope .letter {
-background:#fffaf5;padding:18px 28px;
-text-align:center;color:#9b6878;
-}
-#luvora-envelope h2 {font-size:23px;margin:5px;}
-#luvora-envelope button {
-margin-top:28px;padding:12px 28px;
-border:0;border-radius:25px;background:#b77b8c;
-color:white;font-size:15px;
-}
-</style>
-<div class="env">
-<div class="letter">
-<h2>Luvora Weddings</h2>
-<p>A Beautiful Beginning</p>
-</div>
-<div class="flap"></div>
-</div>
-<button id="open-luvora">Open Invitation ♡</button>
-`;
-document.body.appendChild(cover);
-document.getElementById('open-luvora').onclick = function(){
-cover.classList.add('open');
-setTimeout(()=>cover.remove(),900);
-};
-</script>
 </body>
 </html>
